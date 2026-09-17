@@ -89,3 +89,27 @@ add_filter('comments_template', function ($comments_template) {
 
     return $comments_template;
 }, 100);
+
+/**
+ * On /vertical-seguros/, send the Planes menu item to the seguros pricing page.
+ * Desktop and mobile both render the same WP menu, so this covers both.
+ */
+add_filter('nav_menu_link_attributes', function ($atts, $item) {
+    $isSegurosPage = is_page_template('views/template-subPage-interna-seguros.blade.php')
+        || is_page('vertical-seguros');
+
+    if (!$isSegurosPage) {
+        return $atts;
+    }
+
+    $title = isset($item->title) ? trim(wp_strip_all_tags($item->title)) : '';
+    $path = untrailingslashit((string) wp_parse_url($item->url ?? '', PHP_URL_PATH));
+    $isPlanes = strcasecmp($title, 'Planes') === 0 || strcasecmp($title, 'Plans') === 0;
+    $isPricing = $path === '/pricing';
+
+    if ($isPlanes || $isPricing) {
+        $atts['href'] = home_url('/precios-crm-seguros/');
+    }
+
+    return $atts;
+}, 10, 2);
