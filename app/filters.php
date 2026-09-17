@@ -91,24 +91,49 @@ add_filter('comments_template', function ($comments_template) {
 }, 100);
 
 /**
- * On /vertical-seguros/, send the Planes menu item to the seguros pricing page.
- * Desktop and mobile both render the same WP menu, so this covers both.
+ * On /vertical-seguros/, send Planes to the seguros pricing page.
+ * Desktop uses create_bootstrap_menu() (reads $item->url), mobile uses the walker.
  */
-add_filter('nav_menu_link_attributes', function ($atts, $item) {
-    $isSegurosPage = is_page_template('views/template-subPage-interna-seguros.blade.php')
+$isVerticalSegurosPage = function () {
+    return is_page_template('views/template-subPage-interna-seguros.blade.php')
         || is_page('vertical-seguros');
+};
 
-    if (!$isSegurosPage) {
-        return $atts;
-    }
-
+$rewriteSegurosPlanesItem = function ($item) {
     $title = isset($item->title) ? trim(wp_strip_all_tags($item->title)) : '';
     $path = untrailingslashit((string) wp_parse_url($item->url ?? '', PHP_URL_PATH));
     $isPlanes = strcasecmp($title, 'Planes') === 0 || strcasecmp($title, 'Plans') === 0;
     $isPricing = $path === '/pricing';
 
     if ($isPlanes || $isPricing) {
-        $atts['href'] = home_url('/precios-crm-seguros/');
+        $item->url = home_url('/precios-crm-seguros/');
+    }
+
+    return $item;
+};
+
+add_filter('wp_get_nav_menu_items', function ($items) use ($isVerticalSegurosPage, $rewriteSegurosPlanesItem) {
+    if (!$isVerticalSegurosPage()) {
+        return $items;
+    }
+
+    foreach ($items as $item) {
+        $rewriteSegurosPlanesItem($item);
+    }
+
+    return $items;
+});
+
+add_filter('nav_menu_link_attributes', function ($atts, $item) use ($isVerticalSegurosPage, $rewriteSegurosPlanesItem) {
+    if (!$isVerticalSegurosPage()) {
+        return $atts;
+    }
+
+    $originalUrl = $item->url ?? '';
+    $item = $rewriteSegurosPlanesItem($item);
+
+    if ($item->url !== $originalUrl) {
+        $atts['href'] = $item->url;
     }
 
     return $atts;
