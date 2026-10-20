@@ -165,6 +165,10 @@ add_action('wp_enqueue_scripts', function () {
     if (is_page_template('views/template-new-home-2025.blade.php')) {
         wp_enqueue_style('new-home-2025.css', asset_path('styles/pages/new-home-2025.css'), false, THEME_VERSION);
     }
+    if (is_page_template('views/template-home-escala-seguros.blade.php')) {
+        wp_enqueue_style('home-escala-seguros.css', asset_path('styles/pages/home-escala-seguros.css'), false, THEME_VERSION);
+        wp_enqueue_script('_homeEscalaSeguros.js', asset_path('scripts/pages/_homeEscalaSeguros.js'), [], THEME_VERSION, true);
+    }
     if (is_page_template('views/template-automatizaciones-2025.blade.php')) {
         wp_enqueue_style('automatizaciones-2025.css', asset_path('styles/pages/automatizaciones-2025.css'), false, THEME_VERSION);
     }
@@ -832,4 +836,90 @@ function prefix_fix_form_reset()
 {
     $wpcf7 = [];
     wp_localize_script('contact-form-7', 'wpcf7', $wpcf7);
+}
+
+/**
+ * EWP country/region/city options are loaded via JS, but CF7 SWV enum
+ * only knows the static placeholders (Pais, Region, Ciudad). Selecting a
+ * real value (e.g. Mexico) triggers "Undefined value was submitted".
+ * Replace CF7 select-enum schema builder and skip those dynamic fields.
+ */
+add_action('wpcf7_init', __NAMESPACE__ . '\\escala_cf7_override_select_enum_schema', 20);
+function escala_cf7_override_select_enum_schema()
+{
+    remove_action('wpcf7_swv_create_schema', 'wpcf7_swv_add_select_enum_rules', 20);
+    add_action('wpcf7_swv_create_schema', __NAMESPACE__ . '\\escala_cf7_swv_add_select_enum_rules', 20, 2);
+}
+
+function escala_cf7_swv_add_select_enum_rules($schema, $contact_form)
+{
+    $skip_fields = ['your-country', 'your-region', 'your-city'];
+
+    $tags = $contact_form->scan_form_tags([
+        'basetype' => ['select'],
+    ]);
+
+    $values = array_reduce(
+        $tags,
+        function ($values, $tag) use ($skip_fields) {
+            if (in_array($tag->name, $skip_fields, true)) {
+                return $values;
+            }
+
+            if (!isset($values[$tag->name])) {
+                $values[$tag->name] = [];
+            }
+
+            $tag_values = array_merge(
+                (array) $tag->values,
+                (array) $tag->get_data_option()
+            );
+
+            if ($tag->has_option('first_as_label')) {
+                $tag_values = array_slice($tag_values, 1);
+            }
+
+            $values[$tag->name] = array_merge(
+                $values[$tag->name],
+                $tag_values
+            );
+
+            return $values;
+        },
+        []
+    );
+
+    foreach ($values as $field => $field_values) {
+        $field_values = array_map(
+            static function ($value) {
+                return html_entity_decode(
+                    (string) $value,
+                    ENT_QUOTES | ENT_HTML5,
+                    'UTF-8'
+                );
+            },
+            $field_values
+        );
+
+        $field_values = array_filter(
+            array_unique($field_values),
+            static function ($value) {
+                return '' !== $value;
+            }
+        );
+
+        if (empty($field_values)) {
+            continue;
+        }
+
+        $schema->add_rule(
+            wpcf7_swv_create_rule('enum', [
+                'field' => $field,
+                'accept' => array_values($field_values),
+                'error' => $contact_form->filter_message(
+                    __('Undefined value was submitted through this field.', 'contact-form-7')
+                ),
+            ])
+        );
+    }
 }
