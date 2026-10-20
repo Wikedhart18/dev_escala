@@ -109,6 +109,7 @@ header.customHeader.customSection.landing_global3
 
 header.customHeader.customSection
     display: flex
+    flex-direction: column
     background-color: transparent
     .buttonSections
         height: 100%
@@ -1069,6 +1070,13 @@ header.customHeader.customSection.principal-global-landing-trasp-light.transpare
     top: 0
     left: 0
     right: 0
+    // Refuerzo móvil/tablet: evita que .navbar-nav (Bootstrap / tema padre) gane a .D_e y pinte el menú sobre el hero
+    @include responsivo(telefonoTable)
+        nav.principal.navbar.navbar-expand-md .section-row .container-fluid.sct2 .D_e
+            display: none !important
+    @include responsivo(pcMedio)
+        nav.principal.navbar.navbar-expand-md .section-row .container-fluid.sct2 .D_e
+            display: none !important
     nav.principal.navbar.navbar-expand-md
         .section-row
             // .sct1

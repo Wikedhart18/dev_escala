@@ -572,6 +572,8 @@ o",
 
                                     <div class="elementBody">
 
+                                        <div class="pricingDefaultCalcView">
+
                                         <div class="price">
 
                                             <h3>A partir de <br class="space"></h3>
@@ -732,7 +734,7 @@ o",
                                                         </div>
 
                                                         <div class="field select">
-                                                            <select name="_iaField">
+                                                            <select name="_iaField" id="_iaField">
                                                                 <option value="No" selected>No</option>
                                                                 <option value="Bronce">Bronce</option>
                                                                 <option value="Plata">Plata</option>
@@ -765,6 +767,31 @@ o",
                                                 </div>
 
                                             </form>
+                                        </div>
+
+                                        </div>
+
+                                        <div class="pricingConsultThresholdView" aria-hidden="true">
+                                            <div class="price">
+                                                <h3 style="visibility: hidden!important">A partir de <br class="space"></h3>
+                                                <span class="cost">
+                                                    <span class="discountCost" style="display: flex">
+                                                        <span>CONSULTAR</span>
+                                                    </span>
+                                                    <span class="ahorro discount anualElement aux_visible">
+                                                        Crearemos un plan personalizado <br class="space">
+                                                        según tus necesidades
+                                                    </span>
+                                                </span>
+                                            </div>
+                                            <div class="middle">
+                                                <div class="innerMiddle">
+                                                    <span class="extraTag">
+                                                        A partir de <span style="color: #007F96">100.000 contactos</span>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="calculator dynamic-height special-height"></div>
                                         </div>
 
                                         <div class="buttonSection">
@@ -1670,10 +1697,9 @@ o",
                                         <div class="containElements">
 
                                             <p class="text">
-                                                El servicio de Acompañamiento e Implementación Guiado de <br class="DT_e">
-                                                Escala, con un Gerente de Éxito dedicado, está disponible <br class="DT_e">
-                                                exclusivamente para cuentas Pro con planes anuales <br class="DT_e">
-                                                superiores a USD 1,000 al año.
+                                                El servicio de Acompañamiento e Implementación Guiado de Escala,
+                                                 con un Gerente de Éxito dedicado, está disponible exclusivamente 
+                                                 para cuentas Pro con planes anuales superiores a USD 2,500 al año.
                                                 <br class="space"><br class="space">
                                                 Las cuentas con un valor anual menor cuentan con soporte <br class="DT_e">
                                                 técnico ilimitado vía chat para resolver consultas y acceso <br class="DT_e">
@@ -1729,11 +1755,9 @@ o",
                                         <div class="containElements">
 
                                             <p class="text">
-                                                El servicio de Acompañamiento e Implementación <br class="DT_e">
-                                                Guiado de Escala, con un Gerente de Éxito <br class="DT_e">
-                                                dedicado, está disponible exclusivamente para <br class="DT_e">
-                                                cuentas Pro con planes anuales superiores a USD <br class="DT_e">
-                                                1,000 al año.
+                                               El servicio de Acompañamiento e Implementación Guiado de Escala, 
+                                               con un Gerente de Éxito dedicado, está disponible exclusivamente
+                                                para cuentas Pro con planes anuales superiores a USD 2,500 al año.
                                                 <br class="space">
                                                 <br class="space">
                                                 Las cuentas con un valor anual menor cuentan con <br class="DT_e">

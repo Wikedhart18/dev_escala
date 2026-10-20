@@ -70,11 +70,22 @@ html
 #subPage_whatsapp_2022 .customSection.sectionParent.subpage_whatsapp_0
 
     margin-bottom: 0
+
     @include responsivo(telefonoTable)
         padding-bottom: 25px
 
     @include responsivo(smallPcTablet)
         padding-bottom: 0
+    .backgroundFull
+        padding-top: 60px
+        @include responsivo(telefonoTable)
+            padding-top: 220px!important
+        @include responsivo(pcMedio)
+            padding-top: 190px!important
+        @include responsivo(general)
+            padding-top: 70px
+        @include responsivo(smallPcTablet)
+            padding-top: 85px 
     .section-row
         @include responsivo(telefonoTable)
             width: 95%
@@ -94,9 +105,7 @@ html
             padding: 0
     .backgroundFull
         background-position: 47% 
-        height: 850px
-        padding: 0
-        padding-top: 75px
+        height: 899px
         @include responsivo(telefonoTable)
             background-image: url('/wp-content/themes/oceanwp-child/resources/assets/images/banners/bg-dk-escala-whatsapp-hero-mb-1-1.png')!important
             background-position: center
@@ -104,7 +113,6 @@ html
             padding-bottom: 0!important
             height: auto
         @include responsivo(pcMedio)
-            padding: 150px  0px 0px 0px!important
             background-image: url('/wp-content/themes/oceanwp-child/resources/assets/images/banners/bg-dk-escala-whatsapp-hero-mb-1-1.png')!important
             background-position: center
             margin-bottom: 50px
@@ -113,7 +121,6 @@ html
             background-position: 47% 
             padding-bottom: 0
         @include responsivo(smallPcTablet)
-            padding: 50px 0px 0px 0px
             margin: 0px
     .section-row
         height: 850px
@@ -136,9 +143,12 @@ html
                     overflow: hidden
                     @include responsivo(telefonoTable)
                         margin-bottom: 0
-                        padding-top: 100px
+                        padding-top: 0
+                        height: 340px
                     @include responsivo(pcMedio)
                         margin-bottom: 0
+                        padding-top: 0
+                        height: 340px
                     @include responsivo(general)
                         overflow: visible
                     .containElements

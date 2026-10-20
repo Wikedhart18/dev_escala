@@ -47,7 +47,17 @@
     justify-content: center
 #marketing_ventas_automat_2024 .marketing_ventas_automat_2024_0
     z-index: 2
-    position: relative   
+    position: relative  
+    .backgroundFull
+        padding-top: 60px!important
+        @include responsivo(telefonoTable)
+            padding-top: 220px!important
+        @include responsivo(pcMedio)
+            padding-top: 190px!important
+        @include responsivo(general)
+            padding-top: 70px!important
+        @include responsivo(smallPcTablet)
+            padding-top: 85px !important
     .section-row-2
         background: #fff 
         border-radius: 20px 20px 0px 0px
@@ -289,21 +299,17 @@
         
 
     .backgroundFull
-        padding: 0
-        padding-top: 0
         position: relative
         background-position: center -83px
         background-size: cover
         background-repeat: no-repeat
         @include responsivo(telefonoTable)
-            padding-top: 100px!important
             padding-bottom: 0!important
             height: auto
             border-radius: 0px 0px 20px 20px
             background-position: center
             background-image: url('/wp-content/themes/oceanwp-child/resources/assets/images/banners/bg-automatizaciones-2025-hero-mb.webp')!important
         @include responsivo(pcMedio)
-            padding-top: 100px!important
             padding-bottom: 0!important
             height: auto
             border-radius: 0px 0px 20px 20px

@@ -388,7 +388,7 @@ o",
 "value" => "checkIcon"
 ],
 [
-"name" => "Checkbox aceptación de politicas  ",
+"name" => "Checkbox aceptación de politicas ",
 "value" => "checkIcon"
 ],
 )
@@ -538,7 +538,7 @@ o",
                             </h1>
 
                             <p class="primaryText grayColorTexts">
-                            Ten acceso a las herramientas y el acompañamiento personalizado que acelera tu éxito.
+                                Ten acceso a las herramientas y el acompañamiento personalizado que acelera tu éxito.
                             </p>
 
                         </div>
@@ -1426,7 +1426,7 @@ o",
         <section class="customSection sectionParent subPage_pricingPro_1">
 
             <div class="section-row">
-            <section class="innerSectionElement sct0">
+                <section class="innerSectionElement sct0">
                     <h2 class="title" id="idCompare">
                         Beneficios
                     </h2>
@@ -1753,10 +1753,9 @@ o",
                                         <div class="containElements">
 
                                             <p class="text">
-                                                El servicio de Acompañamiento e Implementación Guiado de <br class="DT_e">
-                                                Escala, con un Gerente de Éxito dedicado, está disponible <br class="DT_e">
-                                                exclusivamente para cuentas Pro con planes anuales <br class="DT_e">
-                                                superiores a USD 1,000 al año.
+                                                El servicio de Acompañamiento e Implementación Guiado de Escala,
+                                                con un Gerente de Éxito dedicado, está disponible exclusivamente
+                                                para cuentas Pro con planes anuales superiores a USD 2,500 al año.
                                                 <br class="space"><br class="space">
                                                 Las cuentas con un valor anual menor cuentan con soporte <br class="DT_e">
                                                 técnico ilimitado vía chat para resolver consultas y acceso <br class="DT_e">

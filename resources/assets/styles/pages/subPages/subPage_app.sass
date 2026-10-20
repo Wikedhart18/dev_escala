@@ -74,23 +74,28 @@
             max-width: 1358px!important
             
         
-
     .backgroundFull
-        padding: 0
-        padding-top: 0
+        padding-top: 60px
+        @include responsivo(telefonoTable)
+            padding-top: 220px!important
+        @include responsivo(pcMedio)
+            padding-top: 190px!important
+        @include responsivo(general)
+            padding-top: 70px
+        @include responsivo(smallPcTablet)
+            padding-top: 85px 
+    .backgroundFull
         position: relative
         background-position: center -83px
         background-size: cover
         background-repeat: no-repeat
         @include responsivo(telefonoTable)
-            padding-top: 100px!important
             padding-bottom: 0!important
             height: auto
             border-radius: 0px 0px 20px 20px
             background-position: center
             background-image: url('/wp-content/themes/oceanwp-child/resources/assets/images/banners/bg-hero-app-escala-2025-mb.webp')!important
         @include responsivo(pcMedio)
-            padding-top: 100px!important
             padding-bottom: 0!important
             height: auto
             border-radius: 0px 0px 20px 20px

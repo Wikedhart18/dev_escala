@@ -33,7 +33,17 @@
     justify-content: center
 #landing_CRM_2024 .hero2025.landing_CRM_2024_0
     z-index: 2
-    position: relative    
+    position: relative   
+    .backgroundFull
+        padding-top: 0
+        @include responsivo(telefonoTable)
+            padding-top: 220px!important
+        @include responsivo(pcMedio)
+            padding-top: 190px!important
+        @include responsivo(general)
+            padding-top: 0!important
+        @include responsivo(smallPcTablet)
+            padding-top: 85px 
     .section-row
         display: flex
         justify-content: space-between
@@ -60,21 +70,16 @@
         
 
     .backgroundFull
-        padding: 0
-        padding-top: 0
         position: relative
         background-position: center -83px
         background-size: cover
         background-repeat: no-repeat
         @include responsivo(telefonoTable)
-            padding-top: 100px!important
-            padding-bottom: 0!important
             height: auto
             border-radius: 0px 0px 20px 20px
             background-position: center
             background-image: url('/wp-content/themes/oceanwp-child/resources/assets/images/banners/bg-section-hero-2025-crm-mb.svg')!important
         @include responsivo(pcMedio)
-            padding-top: 100px!important
             padding-bottom: 0!important
             height: auto
             border-radius: 0px 0px 20px 20px
@@ -274,7 +279,7 @@
         .innerSectionElement.sct3
             padding-top: 0
             position: relative
-            top: 195px
+            top: 224px
             @include responsivo(telefonoTable)
                 padding-top: 0
                 top: 0
@@ -282,9 +287,9 @@
                 padding-top: 0
                 top: 0
             @include responsivo(general)
-                padding-top: 0
+                padding-top: 244px
             @include responsivo(smallPcTablet)
-                top: 210px
+                top: 160px
             .form7
                 
                 padding-bottom: 0

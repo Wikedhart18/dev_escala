@@ -610,6 +610,8 @@ y conexión Meta Business ",
 
                                     <div class="elementBody">
 
+                                        <div class="pricingDefaultCalcView">
+
                                         <div class="price">
 
                                             <h3>A partir de <br class="space"></h3>
@@ -684,6 +686,31 @@ y conexión Meta Business ",
                                             </form>
                                         </div>
 
+                                        </div>
+
+                                        <div class="pricingConsultThresholdView" aria-hidden="true">
+                                            <div class="price">
+                                                <h3 style="visibility: hidden!important">A partir de <br class="space"></h3>
+                                                <span class="cost">
+                                                    <span class="discountCost" style="display: flex">
+                                                        <span>CONSULTAR</span>
+                                                    </span>
+                                                    <span class="ahorro discount anualElement aux_visible">
+                                                        Crearemos un plan personalizado <br class="space">
+                                                        según tus necesidades
+                                                    </span>
+                                                </span>
+                                            </div>
+                                            <div class="middle">
+                                                <div class="innerMiddle">
+                                                    <span class="extraTag">
+                                                        A partir de <span style="color: #007F96">100.000 contactos</span>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="calculator dynamic-height special-height"></div>
+                                        </div>
+
                                         <div class="buttonSection">
 
                                             <a class=" secondaryButton roundedButton hoverInEffect openPopUpButton popup-general-demo-2022">
@@ -714,6 +741,8 @@ y conexión Meta Business ",
                                     </div>
 
                                     <div class="elementBody">
+
+                                        <div class="pricingDefaultCalcView">
 
                                         <div class="price">
 
@@ -965,7 +994,7 @@ y conexión Meta Business ",
                                                             </div>
 
                                                             <label for="_iaField">
-                                                               Incluye <span>
+                                                                Incluye <span>
                                                                     <strong class="iaColor"> Inteligencia Artificial
                                                                         <img class="iaIcon" src="{!! App::setFilePath('/assets/images/illustrations/others/ia-icon-pricing.png') !!}"
                                                                             alt=""></strong>
@@ -1035,6 +1064,32 @@ y conexión Meta Business ",
 
                                             </form>
                                         </div>
+
+                                        </div>
+
+                                        <div class="pricingConsultThresholdView" aria-hidden="true">
+                                            <div class="price">
+                                                <h3 style="visibility: hidden!important">A partir de <br class="space"></h3>
+                                                <span class="cost">
+                                                    <span class="discountCost" style="display: flex">
+                                                        <span>CONSULTAR</span>
+                                                    </span>
+                                                    <span class="ahorro discount anualElement aux_visible">
+                                                        Crearemos un plan personalizado <br class="space">
+                                                        según tus necesidades
+                                                    </span>
+                                                </span>
+                                            </div>
+                                            <div class="middle">
+                                                <div class="innerMiddle">
+                                                    <span class="extraTag">
+                                                        A partir de <span style="color: #007F96">100.000 contactos</span>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="calculator dynamic-height special-height"></div>
+                                        </div>
+
                                         <div class="buttonSection">
 
                                             <a class=" primaryButton hoverInEffect openPopUpButton popup-general-demo-2022">
@@ -1583,10 +1638,9 @@ y conexión Meta Business ",
                                         <div class="containElements">
 
                                             <p class="text">
-                                                El servicio de Acompañamiento e Implementación Guiado de <br class="DT_e">
-                                                Escala, con un Gerente de Éxito dedicado, está disponible <br class="DT_e">
-                                                exclusivamente para cuentas Pro con planes anuales <br class="DT_e">
-                                                superiores a USD 1,000 al año.
+                                                El servicio de Acompañamiento e Implementación Guiado de Escala,
+                                                con un Gerente de Éxito dedicado, está disponible exclusivamente
+                                                para cuentas Pro con planes anuales superiores a USD 2,500 al año.
                                                 <br class="space"><br class="space">
                                                 Las cuentas con un valor anual menor cuentan con soporte <br class="DT_e">
                                                 técnico ilimitado vía chat para resolver consultas y acceso <br class="DT_e">

@@ -719,18 +719,24 @@
 
 
 .headerband_promo_freeclass_t1.customSection.sectionParent
-    background-color: transparent
+    background-color: #F34F36
     z-index: 10
     background-size: cover
     background-position: center 
-    position: absolute
-    top: 128px
+    position: relative
+    width: 100%
+    &.is-fixed
+        position: fixed !important
+        top: 0 !important
+        left: 0
+        right: 0
+        width: 100%
+        // Debajo del nav fijo (z-index ~1000) para que el menú/hamburguesa sigan por encima
+        z-index: 100
     @include responsivo(telefonoTable)
         display: none
-        top: 75px
     @include responsivo(pcMedio)
         background-position: left
-        top: 80px
     @include responsivoSpecial(2100px, 99999px)
         background-size: cover
     @include responsivo(general)
@@ -745,7 +751,7 @@
         padding: 7.5px 0
         @include responsivo(telefonoTable)
             width: 95%!important
-            padding: 12px 0
+            padding: 20px
         @include responsivo(pcMedio)
             width: 95%!important
         @include responsivo(general)
@@ -766,7 +772,8 @@
             .contain
                 display: flex
                 flex-direction: row
-                justify-content: space-between
+                justify-content: center!important
+                gap: 15px
                 align-content: center
                 align-items: center
                 position: relative
@@ -811,24 +818,20 @@
                     font-family: 'Mulish', sans-serif
                     font-size: 20px
                     font-style: normal
-                    font-weight: 900!important
+                    font-weight: 600!important
                     line-height: 1
                     @include responsivo(telefonoTable)
                         margin-left: auto
                         margin-right: auto
                         text-align: center
                         width: auto
-                        margin-top: 12px
-                        font-size: 17px
+                        font-size: 20px
+
                     @include responsivo(pcMedio)
-                        font-size: 20px 
                         text-align: center
-                        margin-bottom: 10px
                     @include responsivo(general)
                         text-align: left
-                        font-size: 18px
                     @include responsivo(smallPcTablet)
-                        font-size: 17px
                         width: 100%
                     @include responsivo(resto)
                         text-align: left
@@ -945,35 +948,33 @@
                         font-weight: 400
                         padding-left: 3px
                 a
-                    font-weight: 900!important
-                    color: #FFFFFF!important
-                    border-radius: 4px
-                    padding: 10px 20px!important
-                    background: linear-gradient(90deg, #F34F36 0%, #007F96 100%)
+                    font-weight: 700!important
+                    border-radius: 8px
+                    padding: 4px 10px!important
+                    font-size: 20px!important
+                    background-color: #fff!important
                     @include responsivo(telefonoTable)
-                        margin: 10px auto
                         margin-bottom: 0
-                        font-size: 15px!important
-                        padding: 10px 20px!important
                     @include responsivo(pcMedio)
-                        font-size: 18px!important
-                        padding: 10px 20px!important
                         margin: 0
                     @include responsivo(general)
-                        font-size: 18px!important
-                        padding: 10px 20px!important
                         margin: 0
                         left: 0
                     @include responsivo(smallPcTablet)
                         margin: 0  6px
                     @include responsivo(resto)
                         margin: 0
-                        font-size: 18px!important
+                        font-size: 22px!important
                         position: relative
                         left: 0
                         // padding: 7.5px 20px!important
-                    &:hover
-                        background: linear-gradient(90deg, #ff6b60 0%, #1fdad3 100%) !important
+                    span
+                        background: linear-gradient(90deg, #F16A5B 0%, #007D94 100%)!important
+                        background-clip: text!important
+                        -webkit-background-clip: text!important
+                        -webkit-text-fill-color: transparent!important
+                        color: transparent!important
+
 .MbHeadbandfree
     display: none!important
     @include responsivo(telefonoTable)

@@ -247,6 +247,31 @@ img
                                 border-radius: 15px
                             @include responsivo(pcMedio)
                                 border-radius: 15px
+
+                        &.is-over-contact-threshold
+                            .elementBody
+                                display: flex
+                                flex-direction: column
+                            .pricingConsultThresholdView
+                                display: block !important
+                                order: 1
+                                .calculator
+                                    display: none !important
+                            .pricingDefaultCalcView
+                                display: flex !important
+                                flex-direction: column
+                                order: 2
+                                > .price,
+                                > .middle
+                                    display: none !important
+                            .buttonSection
+                                order: 3
+                            .openComparation
+                                order: 4
+
+                        .pricingConsultThresholdView
+                            display: none
+
                         @include responsivo(telefonoTable)
                             border-radius: 15px
                             border: 1px solid #83E3D0

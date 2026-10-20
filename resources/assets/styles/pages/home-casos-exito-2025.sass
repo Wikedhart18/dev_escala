@@ -20,6 +20,17 @@ img
 #home-casos-exito-2025 .hero2025.home-casos-exito-2025_0
     z-index: 2
     position: relative  
+
+    .backgroundFull
+        padding-top: 60px
+        @include responsivo(telefonoTable)
+            padding-top: 220px!important
+        @include responsivo(pcMedio)
+            padding-top: 190px!important
+        @include responsivo(general)
+            padding-top: 70px
+        @include responsivo(smallPcTablet)
+            padding-top: 85px
     .separador
         height: 85px
         margin-top: -70px
@@ -33,7 +44,7 @@ img
         justify-content: space-between
         align-items: center
         margin: 0 auto
-        height: 766px
+        height: 812px
         @include responsivo(telefonoTable)
             width: 95%
             height: auto!important
@@ -49,37 +60,35 @@ img
             max-width: 1210px!important
         @include responsivo(smallPcTablet)
             max-width: 1000px!important
+            height: 898px
         @include responsivo(resto)
             width: 100%!important
             max-width: 1305px!important
             
     .backgroundFull
-        padding: 0
-        padding-top: 0
         position: relative
         background-position: left center
         background-size: cover
         background-repeat: no-repeat
         @include responsivo(telefonoTable)
-            padding-top: 100px!important
             padding-bottom: 0!important
             height: auto
             border-radius: 0px 0px 20px 20px!important
             background-position: center
         @include responsivo(pcMedio)
-            padding-top: 100px!important
             padding-bottom: 0!important
             height: auto
             border-radius: 0px 0px 20px 20px!important
 
         @include responsivo(general)
             background-position: 60% 
+            height: 766px
         @include responsivo(smallPcTablet)
             background-position: 70% 
             height: 830px
         @include responsivo(resto)
             background-position: left center
-            height: 766px
+            height: 818px
 
  
         .innerSectionElement.sct1
@@ -91,7 +100,7 @@ img
             @include responsivo(pcMedio)
                top: 0 
             @include responsivo(smallPcTablet)
-                margin-top: auto
+                margin-top: 0
                 position: relative
                 top: 0
                 padding: 0
@@ -99,7 +108,6 @@ img
             @include responsivoSpecial(1800px,1850px  )
                 top: 40px
             .sectionText
-
                 .principalBigTitle
                     font-family: 'Mulish', sans-serif
                     font-style: normal
@@ -227,6 +235,7 @@ img
                 top: 0
             @include responsivo(general)
                 padding-top: 0
+                top: 105px
             @include responsivo(smallPcTablet)
                 top: 150px
             .form7

@@ -52,6 +52,16 @@
 #landing_integraciones_2024 .landing_integraciones_2024_0
     z-index: 2
     position: relative   
+    .backgroundFull
+        padding-top: 80px
+        @include responsivo(telefonoTable)
+            padding-top: 220px!important
+        @include responsivo(pcMedio)
+            padding-top: 190px!important
+        @include responsivo(general)
+            padding-top: 80px
+        @include responsivo(smallPcTablet)
+            padding-top: 85px
     .section-row-2
         width: 95%
         margin: 0 auto
@@ -307,21 +317,17 @@
         
 
     .backgroundFull
-        padding: 0
-        padding-top: 0
         position: relative
         background-position: center -83px
         background-size: cover
         background-repeat: no-repeat
         border-radius: 0px 0px 100px  100px
         @include responsivo(telefonoTable)
-            padding-top: 100px!important
             padding-bottom: 0!important
             height: auto
             border-radius: 0px 0px 20px 20px
             background-position: center left
         @include responsivo(pcMedio)
-            padding-top: 100px!important
             padding-bottom: 0!important
             height: auto
             border-radius: 0px 0px 20px 20px
@@ -885,8 +891,8 @@
                     flex-direction: column-reverse
                 .review-item
                     .container-image
-                    padding: 0
-                    margin: 0
+                        padding: 0
+                        margin: 0
                     img
                         filter: drop-shadow(0 4px 4px rgba(0, 127, 150, 0.10))
                         @include responsivo(telefonoTable)

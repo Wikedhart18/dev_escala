@@ -13,7 +13,7 @@
             </div> -->
 
             <p class="text">
-                2025 © ExitoWeb, Inc. Todos los derechos reservados. <br>
+                {{ date('Y') }} © ExitoWeb, Inc. Todos los derechos reservados. <br>
                 Términos de servicio
                 <a target="_blank" href="https://escala.com/terminos-de-servicio/">(ES) </a>
                 <a target="_blank" href="https://escala.com/terms-of-service/">(EN)</a>

@@ -231,7 +231,8 @@ class SetComponents extends Controller
                 'views/single-post-inbox-whatsapp-2024.blade.php',
                 'views/single-post-precios-meta-2024.blade.php',
                 'views/single-post-especial-2024.blade.php',
-                'views/single-post-especial-ingles-2024.blade.php'
+                'views/single-post-especial-ingles-2024.blade.php',
+                'views/single-post-impulso.blade.php'
             ];
         }
 
@@ -349,6 +350,7 @@ class SetComponents extends Controller
                 'views/template-subPage-educacion-2023.blade.php',
                 'views/template-subPage-implementacion-2023.blade.php',
                 'views/template-subPage-marketing-ventas-automat-2024.blade.php',
+                'views/template-subPage-interna-seguros.blade.php',
                 'views/template-subPage-landingPage-base-2023.blade.php',
                 'views/template-subPage-CRM-2023.blade.php',
                 'views/template-subPage-automatizacion-2023.blade.php',
@@ -360,6 +362,7 @@ class SetComponents extends Controller
                 'views/template-home-2023.blade.php',
                 'views/template-home-2025.blade.php',
                 'views/template-new-home-2025.blade.php',
+                'views/template-home-escala-seguros.blade.php',
                 'views/template-subPage-zoom-meeting-2023.blade.php',
                 'views/template-subPage-video-helper.blade.php',
                 'views/template-subPage-campaña-AI.blade.php',
@@ -381,6 +384,7 @@ class SetComponents extends Controller
                 'views/template-casoExito-Cambridge.php',
                 'views/template-casoExito-kata-gogo.php',
                 'views/template-subPage-pricingPro.blade.php',
+                'views/template-subPage-crm-seguros-pricing.blade.php',
                 'views/template-subPage-planesIa.blade.php',
                 'views/template-subPage-pricing-2023.blade.php',
                 'views/template-corporative-resentation.blade.php',

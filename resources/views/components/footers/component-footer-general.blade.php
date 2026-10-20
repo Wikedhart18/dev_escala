@@ -33,7 +33,7 @@
                 @if (isset($pie_pagina_texto_1c_3c) && $pie_pagina_texto_1c_3c != null)
                 <p class="text">
 
-                    {!! $pie_pagina_texto_1c_3c !!}
+                    {!! App::replaceFooterCopyrightYear($pie_pagina_texto_1c_3c) !!}
 
                 </p>
                 @endif
@@ -198,6 +198,9 @@
 
     @php
     $pie_pagina_texto_base_3c = ACF_CUSTOM::_getField('pie_pagina_texto_base_3c', $footerTemplate_id);
+    if (!empty($pie_pagina_texto_base_3c)) {
+        $pie_pagina_texto_base_3c = App::replaceFooterCopyrightYear($pie_pagina_texto_base_3c);
+    }
     @endphp
     @if (isset($pie_pagina_texto_base_3c) && $pie_pagina_texto_base_3c != null)
     <div class="bottomPiePagina">

@@ -1071,9 +1071,9 @@ y conexión Meta Business ",
                 </div>
 
                 <div class="innerSectionElement sct1">
-                   
+
                     <div class="pricing-container">
-                       
+
                         <div class="comparar-column">
                             <div class="column-header no-bg">
 
@@ -1124,7 +1124,7 @@ y conexión Meta Business ",
                                 </div>
                             </div>
                         </div>
-                       
+
                         <div class="pricing-column">
                             <div class="internalColumn">
                                 <div class="column-header">
@@ -1231,7 +1231,7 @@ y conexión Meta Business ",
                                 </div>
                             </div>
                         </div>
-                  
+
                         <div class="pricing-column">
                             <div class="internalColumn">
                                 <div class="column-header">
@@ -1284,7 +1284,7 @@ y conexión Meta Business ",
                                 </div>
                             </div>
                         </div>
-                   
+
                         <div class="pricing-column">
                             <div class="internalColumn">
                                 <div class="column-header">
@@ -1338,7 +1338,7 @@ y conexión Meta Business ",
                             </div>
                         </div>
 
-                     
+
                         <div class="pricing-column">
                             <div class="internalColumn">
                                 <div class="column-header">
@@ -1397,7 +1397,7 @@ y conexión Meta Business ",
 
                     <div class="mobile-pricing-container">
                         <?php
-                    
+
                         $planes = [
                             [
                                 'nombre' => 'Gratuito',
@@ -1491,7 +1491,7 @@ y conexión Meta Business ",
                             ]
                         ];
 
-                    
+
                         foreach ($planes as $plan) {
                             echo '<div class="mobile-plan" onclick="toggleMobilePlan(this)">
                 <div class="mobile-plan-header">
@@ -1590,7 +1590,7 @@ y conexión Meta Business ",
                                 }
                             });
 
-                            
+
                             planElement.classList.toggle('active');
                         }
                         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -1605,7 +1605,7 @@ y conexión Meta Business ",
                                             behavior: 'smooth',
                                             block: 'start'
                                         });
-                                        
+
                                         window.history.pushState(null, null, href);
                                     }
                                 }
@@ -1620,14 +1620,14 @@ y conexión Meta Business ",
                         ¿Necesitas créditos adicionales?
                     </h2>
                     <div class="pricing-container">
-                        
+
                         <div class="comparar-column">
                             <div class="column-body">
                                 <div class="section-title bg-blue radius">Inversión</div>
                                 <div class="section-title bg-blue radius-1">Créditos adicionales</div>
                             </div>
                         </div>
-                        
+
                         <div class="pricing-column">
                             <div class="column-body">
                                 <div class="feature-row">
@@ -1639,7 +1639,7 @@ y conexión Meta Business ",
 
                             </div>
                         </div>
-                       
+
                         <div class="pricing-column">
                             <div class="column-body">
                                 <div class="feature-row">
@@ -1651,7 +1651,7 @@ y conexión Meta Business ",
 
                             </div>
                         </div>
-                   
+
                         <div class="pricing-column">
                             <div class="column-body">
                                 <div class="feature-row">
@@ -1663,7 +1663,7 @@ y conexión Meta Business ",
 
                             </div>
                         </div>
-                  
+
                         <div class="pricing-column">
                             <div class="column-body">
                                 <div class="feature-row">
@@ -2132,10 +2132,9 @@ y conexión Meta Business ",
                                         <div class="containElements">
 
                                             <p class="text">
-                                                El servicio de Acompañamiento e Implementación Guiado de <br class="DT_e">
-                                                Escala, con un Gerente de Éxito dedicado, está disponible <br class="DT_e">
-                                                exclusivamente para cuentas Pro con planes anuales <br class="DT_e">
-                                                superiores a USD 1,000 al año.
+                                                El servicio de Acompañamiento e Implementación Guiado de Escala,
+                                                con un Gerente de Éxito dedicado, está disponible exclusivamente
+                                                para cuentas Pro con planes anuales superiores a USD 2,500 al año.
                                                 <br class="space"><br class="space">
                                                 Las cuentas con un valor anual menor cuentan con soporte <br class="DT_e">
                                                 técnico ilimitado vía chat para resolver consultas y acceso <br class="DT_e">

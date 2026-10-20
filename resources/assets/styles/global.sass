@@ -762,7 +762,7 @@ div#jet-popup-4200
                 // width: 100%
                 text-align: left
                 margin-right: auto
-    .no-website-checkbox
+    .no-website-checkbox,.no-asesores-checkbox
         p 
             display: flex
             flex-direction: row!important
@@ -834,6 +834,8 @@ input.ewp-phone-call-code
         display: none!important
 
 
+// #masthead: mayor especificidad que reglas del padre/Bootstrap sobre .navbar-nav
+header#masthead .D_e,
 .D_e
     @include responsivo(telefonoTable)
         display: none!important
@@ -897,6 +899,7 @@ input.ewp-phone-call-code
     @include responsivo(resto)
         display: none!important
 
+header#masthead .D_e_flex,
 .D_e_flex
     @include responsivo(telefonoTable)
         display: none!important
@@ -1001,9 +1004,24 @@ header.customHeader.customSection.component-header-landing nav.navbar .section-r
         display: flex
         flex-direction: row
 
+// OceanWP usa #masthead con display:block; gana en especificidad a header.customHeader… y rompe el flex.
+// Sin flex, el orden del DOM manda: nav arriba y cintillo abajo (appendTo al final del header).
+header#masthead.customHeader.withHeaderBand
+    display: flex !important
+    flex-direction: column
+    // appendTo('header') deja la banda después del nav; forzamos banda arriba y nav debajo
+    > section[class*="headerband"]
+        order: -1
+    > nav.principal.navbar
+        order: 1
+
 header.customHeader.withHeaderBand
     display: flex
     flex-direction: column
+    > section[class*="headerband"]
+        order: -1
+    > nav.principal.navbar
+        order: 1
 
 
 #blog-single-bootstrap

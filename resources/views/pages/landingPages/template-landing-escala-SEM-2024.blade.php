@@ -260,11 +260,11 @@
 
                             @php
                             $videoEmbed = App::setFilePath(
-                            '/assets/videos/intro_escala__crm_todo-en-uno (1080p).mp4',
+                            '/assets/videos/homepage_082024_video.mp4',
                             );
                             // $videoCover = App::setFilePath('/assets/images/gifs/home_video_portrait_2023.gif');
                             $videoCover = App::setFilePath(
-                            '/assets/videos/intro_escala__crm_todo-en-uno (1080p).mp4',
+                            '/assets/videos/homepage_082024_video.mp4',
                             );
                             @endphp
 

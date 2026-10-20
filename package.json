@@ -26,7 +26,8 @@
     "lint": "npm run -s lint:scripts && npm run -s lint:styles",
     "lint:scripts": "eslint resources/assets/scripts resources/assets/build",
     "lint:styles": "stylelint \"resources/assets/styles//*.{css,sass,scss,sss,less}\"",
-    "test": "npm run -s lint"
+    "test": "npm run -s lint",
+    "gulp": "gulp local"
   },
   "engines": {
     "node": ">= 8.0.0"
@@ -86,7 +87,7 @@
     "browser-sync": "^2.26.3",
     "global": "^4.4.0",
     "gulp-autoprefixer": "^6.0.0",
-    "gulp-cli": "^2.0.1",
+    "gulp-cli": "^3.0.0",
     "gulp-csso": "^3.0.1",
     "gulp-dart-sass": "^0.9.1",
     "gulp-plumber": "^1.2.1",

@@ -141,9 +141,9 @@ function starter_calculateFinal(data) {
 
     // jQuery('#finalPriceCalc').text('USD ' + costFinal + ' / mes');
 
-    jQuery('.pricingCard.starter .price .discountCost').html('<span>USD ' + costFinal + ' <small>/ mes</small> </span>');
+    jQuery('.pricingCard.starter .pricingDefaultCalcView .price .discountCost').html('<span>USD ' + costFinal + ' <small>/ mes</small> </span>');
 
-    jQuery('.pricingCard.starter .elementBody .price .cost .ahorro ').html('Pago total de <strong>USD ' + cost_anual + ' / año</strong>');
+    jQuery('.pricingCard.starter .pricingDefaultCalcView .price .cost .ahorro ').html('Pago total de <strong>USD ' + cost_anual + ' / año</strong>');
 
 }
 
@@ -407,19 +407,19 @@ function calculateFinal(data) {
     priceTach = Math.round(priceTach * 100) / 100;
 
     if (_typePlan == 'monthly') {
-        jQuery('.pricingCard.pro .elementBody .price .cost .ahorro ').html('Pago total de USD ' + priceTach + ' / año');
-        jQuery('.pricingCard.pro .price .discountCost').html('<span>USD ' + costFinal + ' <small>/ mes</small> </span>');
+        jQuery('.pricingCard.pro .pricingDefaultCalcView .price .cost .ahorro ').html('Pago total de USD ' + priceTach + ' / año');
+        jQuery('.pricingCard.pro .pricingDefaultCalcView .price .discountCost').html('<span>USD ' + costFinal + ' <small>/ mes</small> </span>');
     }
 
     if (_typePlan == 'yearly') {
         let discountTotal = priceTach * 0.8; // total con descuento
         discountTotal = Math.round(discountTotal * 100) / 100;
         let monthlyWithDiscount = Math.round((discountTotal / 12) * 100) / 100;
-        jQuery('.pricingCard.pro .elementBody .price .cost .ahorro ').html(
+        jQuery('.pricingCard.pro .pricingDefaultCalcView .price .cost .ahorro ').html(
             'Pago total de <span>USD ' + priceTach + '</span> - <span style="font-weight: 700!important; text-decoration:none;"> USD ' + discountTotal + ' / año</span>'
         );
         // Mostrar el valor mensual con descuento real, redondeado
-        jQuery('.pricingCard.pro .price .discountCost').html('<span>USD ' + monthlyWithDiscount + ' <small>/ mes</small> </span>');
+        jQuery('.pricingCard.pro .pricingDefaultCalcView .price .discountCost').html('<span>USD ' + monthlyWithDiscount + ' <small>/ mes</small> </span>');
     }
 }
 
@@ -479,6 +479,43 @@ function adjustCalculatorHeight() {
             jQuery('.calculator').css('height', '330px');
         }
     }
+}
+
+var PRICING_CONTACT_CONSULT_THRESHOLD = 100000;
+
+function parsePricingContactsValue(val) {
+    var n = parseInt(String(val == null ? '' : val).replace(/[^\d]/g, ''), 10);
+    return isNaN(n) ? 0 : n;
+}
+
+function syncPricingCardConsultThreshold($card) {
+    if (!$card || !$card.length) {
+        return;
+    }
+    var $contacts = $card.find('form input.contactsField[name="_contactsField"]').first();
+    if (!$contacts.length) {
+        return;
+    }
+    var on = parsePricingContactsValue($contacts.val()) >= PRICING_CONTACT_CONSULT_THRESHOLD;
+    $card.toggleClass('is-over-contact-threshold', on);
+    $card.find('.pricingDefaultCalcView').attr('aria-hidden', on ? 'true' : 'false');
+    $card.find('.pricingConsultThresholdView').attr('aria-hidden', on ? 'false' : 'true');
+    adjustCalculatorHeight();
+}
+
+function initPricingContactConsultThreshold() {
+    jQuery('form#formCalcGeneral_PRO').each(function () {
+        var $form = jQuery(this);
+        var $card = $form.closest('.pricingCard');
+        if (!$card.is('.pro')) {
+            return;
+        }
+        var $contacts = $form.find('input.contactsField[name="_contactsField"]');
+        $contacts.on('input change', function () {
+            syncPricingCardConsultThreshold($card);
+        });
+        syncPricingCardConsultThreshold($card);
+    });
 }
 
 jQuery(document).ready(function () {
@@ -545,20 +582,11 @@ jQuery(window).on('scroll', sticky_headerTable);
 
     });
 
-    jQuery('form#formCalcGeneral_PRO').on('change click', async function (e) {
+    jQuery('form#formCalcGeneral_PRO').on('input change click', async function (e) {
 
         calculate = _serializeFormToObject(e.currentTarget)
 
         calculateFinal(calculate);
-
-    });
-    jQuery('form#formCalcGeneral_STARTER').on('change', async function (e) {
-
-        calculate = _serializeFormToObject(e.currentTarget)
-
-        console.log('calculos starter', calculate);
-
-        starter_calculateFinal(calculate);
 
     });
 
@@ -576,13 +604,15 @@ jQuery(window).on('scroll', sticky_headerTable);
         adjustCalculatorHeight();
     });
 
-    jQuery('.omnicanal-options input').on('change', function () {
+    jQuery('.omnicanal-options input').on('input change', function () {
         jQuery('form#formCalcGeneral_PRO').trigger('change');
     });
 
     jQuery('#_iaField').on('change', function () {
         jQuery('form#formCalcGeneral_PRO').trigger('change');
     });
+
+    initPricingContactConsultThreshold();
 
     adjustCalculatorHeight();
 });

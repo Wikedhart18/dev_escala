@@ -71,6 +71,34 @@ class App extends Controller
         return get_stylesheet_directory_uri() . $file;
     }
 
+    /**
+     * Sustituye el año fijo del copyright (p. ej. 2024 ©) por el año actual.
+     */
+    public static function replaceFooterCopyrightYear($html)
+    {
+        if (empty($html) || !is_string($html)) {
+            return $html;
+        }
+
+        $year = date('Y');
+
+        $html = preg_replace(
+            '/\b20\d{2}\b(?=\s*(?:©|&copy;|&#169;))/iu',
+            $year,
+            $html,
+            1
+        );
+
+        $html = preg_replace(
+            '/(?:©|&copy;|&#169;)\s*\b20\d{2}\b/iu',
+            '© ' . $year,
+            $html,
+            1
+        );
+
+        return $html;
+    }
+
     public static function get_page_by_template($template = '')
     {
         $args = [
