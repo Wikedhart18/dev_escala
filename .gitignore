@@ -11,3 +11,6 @@ html.html
 
 
 pruebas.*
+# Local junction to resources/assets (Laragon)
+/assets
+
