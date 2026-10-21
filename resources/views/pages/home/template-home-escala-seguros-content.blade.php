@@ -303,9 +303,10 @@
   </div>
 </section>
 
-<footer>
+{{-- Avoid "footer"/"foot" tags: prod HTML filter rewrites foo→bar (footer→barter, foot→bart) --}}
+<div class="es-site-end" role="contentinfo">
   <div class="es-wrap">
-    <div class="foot">
+    <div class="es-cols">
       <div><img src="{!! App::setFilePath('/assets/images/home-escala-seguros/logo-escala.webp') !!}" alt="Escala"><p style="margin-top:16px;max-width:32ch">La plataforma de IA para el canal de distribución de seguros.</p></div>
       <div><h4>Plataforma</h4><ul><li><a href="#plataforma">Ventas</a></li><li><a href="#conversaciones">Conversaciones</a></li><li><a href="#plataforma">Marketing</a></li><li><a href="#plataforma">Automatización</a></li><li><a href="#otto">Otto IA</a></li></ul></div>
       <div><h4>Soluciones</h4><ul><li><a href="#canal">Compañías de seguros</a></li><li><a href="#canal">Promotoras</a></li><li><a href="#canal">Corredurías y agencias</a></li><li><a href="#canal">Asesores y brokers</a></li></ul></div>
@@ -313,5 +314,5 @@
     </div>
     <div class="legal"><span>© 2026 Escala. Todos los derechos reservados.</span><span>Términos · Privacidad</span></div>
   </div>
-</footer>
+</div>
 </div>
