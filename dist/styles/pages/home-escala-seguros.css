@@ -64,8 +64,8 @@ section{padding-block:104px}
 .hero .ctas{justify-content:center}
 .hero-proof{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 26px;margin-top:28px;font:700 14px var(--font-ui);color:var(--on-dark-muted)}
 .hero-proof span{display:inline-flex;align-items:center;gap:8px}.hero-proof svg{color:var(--mint)}
-.hero-shot{position:relative;z-index:1;margin:56px auto -1px;max-width:980px;border-radius:18px 18px 0 0;overflow:hidden;background:#0F1D25;box-shadow:0 -10px 60px -20px rgba(131,227,208,.35),0 0 0 1px rgba(255,255,255,.12)}
-.hero-shot img{display:block;width:100%;height:auto;object-fit:contain}
+.hero-shot{position:relative;z-index:1;margin:56px auto 0;max-width:980px;border-radius:18px 18px 0 0;overflow:hidden;background:transparent;box-shadow:0 -10px 60px -20px rgba(131,227,208,.35),0 0 0 1px rgba(255,255,255,.12)}
+.hero-shot img{display:block;width:100%;height:auto;object-fit:cover;object-position:top center;vertical-align:bottom}
 @media (max-width:700px){.hero{padding-block:48px 0}.hero .sub{font-size:17px}.hero-proof{display:none}.hero-shot{margin-top:36px}}
 
 /* Trust */
