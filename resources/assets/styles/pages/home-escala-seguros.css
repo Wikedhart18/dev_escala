@@ -505,57 +505,88 @@ body:has(#home-escala-seguros) .wrap.container.global .main {
   #home-escala-seguros .foot{grid-template-columns:1fr 1fr!important}
 }
 
-/* Dark CF7: labels, phone mask, recaptcha contrast */
+/* Dark CF7: labels + recaptcha */
 #home-escala-seguros .cf7-home-seguros .wpcf7-form label,
 #home-escala-seguros .cf7-home-seguros .require,
 #home-escala-seguros .cf7-home-seguros span.require,
-#home-escala-seguros .cf7-home-seguros .wpcf7-quiz-label,
-#home-escala-seguros .cf7-home-seguros p {
+#home-escala-seguros .cf7-home-seguros .wpcf7-quiz-label {
   color:#B9CBD3!important;
   -webkit-text-fill-color:#B9CBD3!important;
 }
-#home-escala-seguros .cf7-home-seguros .ewp-phone-call-code,
-#home-escala-seguros .cf7-home-seguros .iti__selected-dial-code,
-#home-escala-seguros .cf7-home-seguros .wpcf7-form-control-wrap[data-name*="phone"],
-#home-escala-seguros .cf7-home-seguros .wpcf7-form-control-wrap[data-name*="tel"] {
-  color:#E4ECF0!important;
+#home-escala-seguros .cf7-home-seguros .wpcf7-recaptcha,
+#home-escala-seguros .cf7-home-seguros .g-recaptcha {
+  max-width:100%!important;
 }
-#home-escala-seguros .cf7-home-seguros .ewp-phone-call-code,
-#home-escala-seguros .cf7-home-seguros span.ewp-phone-call-code {
+
+/* Phone: +52 + mask as ONE field (EWP inserts input.ewp-phone-call-code before the phone input) */
+#home-escala-seguros .cf7-home-seguros .wpcf7-form-control-wrap[data-name*="phone"],
+#home-escala-seguros .cf7-home-seguros .wpcf7-form-control-wrap[data-name*="tel"],
+#home-escala-seguros .cf7-home-seguros .wpcf7-form-control-wrap:has(> input.ewp-phone-call-code),
+#home-escala-seguros .cf7-home-seguros p:has(> input.ewp-phone-call-code) {
+  display:flex!important;
+  align-items:stretch!important;
+  gap:0!important;
+  width:100%!important;
+  margin:0!important;
+  float:none!important;
+  background:transparent!important;
+  border:0!important;
+  padding:0!important;
+}
+#home-escala-seguros .cf7-home-seguros input.ewp-phone-call-code {
+  float:none!important;
+  display:block!important;
+  flex:0 0 72px!important;
+  width:72px!important;
+  max-width:72px!important;
+  min-height:48px!important;
+  margin:0!important;
+  padding:13px 8px!important;
+  text-align:center!important;
+  background:#0F1D25!important;
   color:#F1685A!important;
   -webkit-text-fill-color:#F1685A!important;
-  opacity:1!important;
-  font-weight:700!important;
-}
-#home-escala-seguros .cf7-home-seguros .wpcf7-form-control-wrap.ewp-phone,
-#home-escala-seguros .cf7-home-seguros .phone-field-wrap,
-#home-escala-seguros .cf7-home-seguros .wpcf7-form-control-wrap:has(input[type="tel"]),
-#home-escala-seguros .cf7-home-seguros .wpcf7-form-control-wrap:has(input[name*="phone"]),
-#home-escala-seguros .cf7-home-seguros .wpcf7-form-control-wrap:has(input[name*="tel"]) {
-  display:flex!important;
-  align-items:center!important;
-  gap:8px!important;
-  background:#0F1D25!important;
   border:1.5px solid #26404D!important;
-  border-radius:10px!important;
-  padding:0 12px!important;
-  box-sizing:border-box!important;
+  border-right:0!important;
+  border-radius:10px 0 0 10px!important;
+  box-shadow:none!important;
+  font:700 16px/1.3 var(--font-display)!important;
+  opacity:1!important;
+  color-scheme:dark;
 }
-#home-escala-seguros .cf7-home-seguros .wpcf7-form-control-wrap:has(input[type="tel"]) input,
-#home-escala-seguros .cf7-home-seguros .wpcf7-form-control-wrap:has(input[name*="phone"]) input,
-#home-escala-seguros .cf7-home-seguros .wpcf7-form-control-wrap:has(input[name*="tel"]) input {
-  border:0!important;
-  background:transparent!important;
+#home-escala-seguros .cf7-home-seguros input.ewp-phone-text,
+#home-escala-seguros .cf7-home-seguros .wpcf7-form-control-wrap[data-name*="phone"] > input.wpcf7-form-control,
+#home-escala-seguros .cf7-home-seguros .wpcf7-form-control-wrap[data-name*="tel"] > input.wpcf7-form-control,
+#home-escala-seguros .cf7-home-seguros input.ewp-phone-call-code + input.wpcf7-form-control,
+#home-escala-seguros .cf7-home-seguros input.ewp-phone-call-code + .wpcf7-form-control-wrap > input {
+  float:none!important;
+  flex:1 1 auto!important;
+  width:auto!important;
+  max-width:none!important;
+  min-width:0!important;
+  min-height:48px!important;
+  margin:0!important;
+  background:#0F1D25!important;
+  color:#E4ECF0!important;
+  -webkit-text-fill-color:#E4ECF0!important;
+  border:1.5px solid #26404D!important;
+  border-radius:0 10px 10px 0!important;
   box-shadow:none!important;
 }
-#home-escala-seguros .cf7-home-seguros .wpcf7-recaptcha,
-#home-escala-seguros .cf7-home-seguros .g-recaptcha,
-#home-escala-seguros .cf7-home-seguros iframe[src*="recaptcha"] {
-  max-width:100%!important;
-  transform-origin:left top;
-}
-#home-escala-seguros .cf7-home-seguros .wpcf7-recaptcha > div {
+/* When call-code sits outside the wrap (sibling), keep phone wrap flex-1 */
+#home-escala-seguros .cf7-home-seguros input.ewp-phone-call-code + .wpcf7-form-control-wrap {
+  flex:1 1 auto!important;
+  width:auto!important;
+  max-width:none!important;
   margin:0!important;
+  float:none!important;
+  display:block!important;
+  background:transparent!important;
+  border:0!important;
+  padding:0!important;
+}
+#home-escala-seguros .cf7-home-seguros input.ewp-phone-call-code + .wpcf7-form-control-wrap > input {
+  width:100%!important;
 }
 body:has(#home-escala-seguros) {
   overflow-x: hidden !important;
