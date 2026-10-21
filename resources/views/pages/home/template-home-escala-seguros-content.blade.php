@@ -246,7 +246,7 @@
         $_formShortcode = null;
         if ($_data = get_posts($_args)) {
           foreach ($_data as $_key) {
-            if ($_key->post_title === 'Profile demo - Flujo Demo') {
+            if ($_key->post_title === 'Formulario Pagina Seguro') {
               $_formShortcode = '[contact-form-7 id="' . $_key->ID . '"]';
               break;
             }
