@@ -30,7 +30,7 @@
         <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="m5 12 5 5 9-10"/></svg>10 países</span>
       </div>
     </div>
-    <div class="hero-shot"><img src="{!! App::setFilePath('/assets/images/home-escala-seguros/hero-bandeja-hq.png') !!}" alt="Escala: bandeja de conversaciones, panel de oportunidades y lista de prospectos" width="909" height="488" loading="eager"></div>
+    <div class="hero-shot"><img src="{!! App::setFilePath('/assets/images/home-escala-seguros/hero-collage.png') !!}" alt="Escala: bandeja, panel de inicio y prospectos" width="903" height="525" loading="eager"></div>
   </div>
 </section>
 
