@@ -30,7 +30,7 @@
         <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="m5 12 5 5 9-10"/></svg>10 países</span>
       </div>
     </div>
-    <div class="hero-shot"><img src="{!! App::setFilePath('/assets/images/home-escala-seguros/hero-collage.png') !!}" alt="Escala: bandeja, panel de inicio y prospectos" width="903" height="525" loading="eager"></div>
+    <div class="hero-shot"><img src="{!! App::setFilePath('/assets/images/home-escala-seguros/hero-shot.webp') !!}" alt="Escala: bandeja de conversaciones, panel de oportunidades y lista de prospectos" width="860" height="211" loading="eager"></div>
   </div>
 </section>
 
@@ -38,7 +38,7 @@
 <section class="trust" aria-label="Confianza">
   <div class="es-wrap">
     <span class="neutral"><b>Independiente y multi-aseguradora.</b> Funciona con todas las compañías de tu cartera.</span>
-    <img class="badge" src="{!! App::setFilePath('/assets/images/home-escala-seguros/badge-meta.webp') !!}" alt="Meta Business Partner" width="88" height="44">
+    <img class="es-badge" src="{!! App::setFilePath('/assets/images/home-escala-seguros/badge-meta.webp') !!}" alt="Meta Business Partner" width="88" height="44">
     <div class="ratings">
       <span><b>4.9</b> <span class="st">★★★★★</span> Google</span>
       <span><b>4.8</b> <span class="st">★★★★★</span> Capterra</span>
@@ -95,13 +95,13 @@
     <div class="mpanel" role="tabpanel" id="mp0" aria-labelledby="m0">
       <div><h3>Ventas</h3><p>Prospectos, cotizaciones, pólizas y renovaciones de todas tus aseguradoras en un solo lugar.</p>
         <ul><li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="m5 12 5 5 9-10"/></svg>Cartera multi-aseguradora</li><li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="m5 12 5 5 9-10"/></svg>Pipeline de oportunidades por ramo</li><li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="m5 12 5 5 9-10"/></svg>Reportes de producción por asesor</li></ul></div>
-      <div class="shot"><div class="shot-bar"><i></i><i></i><i></i></div><img src="{!! App::setFilePath('/assets/images/home-escala-seguros/shot-prospectos.png') !!}" alt="Vista de Prospectos en Escala, con menú de Cotizaciones, Pólizas, Cartera y Renovaciones" width="752" height="468" loading="lazy"></div>
+      <div class="shot"><div class="shot-bar"><i></i><i></i><i></i></div><img src="{!! App::setFilePath('/assets/images/home-escala-seguros/shot-prospectos.webp') !!}" alt="Vista de Prospectos en Escala, con menú de Cotizaciones, Pólizas, Cartera y Renovaciones" width="752" height="468" loading="lazy"></div>
     </div>
     <div class="mpanel" role="tabpanel" id="mp1" aria-labelledby="m1" hidden>
       <div><h3>Conversaciones</h3><p>WhatsApp, Instagram y Facebook en una bandeja compartida, conectada a la ficha de cada cliente.</p>
         <ul><li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="m5 12 5 5 9-10"/></svg>Chats asignados por asesor</li><li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="m5 12 5 5 9-10"/></svg>WhatsApp Business API oficial</li><li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="m5 12 5 5 9-10"/></svg>Historial junto a las pólizas</li></ul>
         <a class="more" href="#conversaciones">Ver el módulo →</a></div>
-      <div class="shot"><div class="shot-bar"><i></i><i></i><i></i></div><img src="{!! App::setFilePath('/assets/images/home-escala-seguros/hero-bandeja-hq.png') !!}" alt="Bandeja de conversaciones de Escala con chats de WhatsApp y ficha del cliente" width="756" height="464" loading="lazy"></div>
+      <div class="shot"><div class="shot-bar"><i></i><i></i><i></i></div><img src="{!! App::setFilePath('/assets/images/home-escala-seguros/shot-bandeja.webp') !!}" alt="Bandeja de conversaciones de Escala con chats de WhatsApp y ficha del cliente" width="756" height="464" loading="lazy"></div>
     </div>
     <div class="mpanel" role="tabpanel" id="mp2" aria-labelledby="m2" hidden>
       <div><h3>Marketing</h3><p>Atrae prospectos y reactiva tu cartera con campañas que nacen de tus propios datos.</p>
@@ -116,7 +116,7 @@
     <div class="mpanel" role="tabpanel" id="mp3" aria-labelledby="m3" hidden>
       <div><h3>Automatización</h3><p>Flujos que trabajan sobre la póliza: vencimientos, cobranza y seguimiento post-siniestro sin intervención manual.</p>
         <ul><li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="m5 12 5 5 9-10"/></svg>Alertas de vencimiento</li><li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="m5 12 5 5 9-10"/></svg>Recordatorios por WhatsApp</li><li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="m5 12 5 5 9-10"/></svg>Tareas operativas automáticas</li></ul></div>
-      <div class="shot"><div class="shot-bar"><i></i><i></i><i></i></div><img src="{!! App::setFilePath('/assets/images/home-escala-seguros/shot-auto.png') !!}" alt="Flujo de automatización en Escala: registro creado, enviar WhatsApp, esperar, ¿tiene póliza por vencer?" width="690" height="462" loading="lazy"></div>
+      <div class="shot"><div class="shot-bar"><i></i><i></i><i></i></div><img src="{!! App::setFilePath('/assets/images/home-escala-seguros/shot-auto.webp') !!}" alt="Flujo de automatización en Escala: registro creado, enviar WhatsApp, esperar, ¿tiene póliza por vencer?" width="690" height="462" loading="lazy"></div>
     </div>
 
     <div class="otto-link"><div class="otto-av">O</div><p><b>Otto conecta los cuatro módulos.</b> Lee lo que pasa en cada uno y te dice qué hacer después.</p></div>
@@ -137,7 +137,7 @@
       <div class="convo-stat"><b class="grad">+1M</b><span>mensajes de WhatsApp gestionados en Escala cada mes</span></div>
     </div>
     <div class="stage">
-      <div class="shot"><div class="shot-bar"><i></i><i></i><i></i></div><img src="{!! App::setFilePath('/assets/images/home-escala-seguros/hero-bandeja-hq.png') !!}" alt="Bandeja de conversaciones de Escala" width="756" height="464" loading="lazy"></div>
+      <div class="shot"><div class="shot-bar"><i></i><i></i><i></i></div><img src="{!! App::setFilePath('/assets/images/home-escala-seguros/shot-bandeja.webp') !!}" alt="Bandeja de conversaciones de Escala" width="756" height="464" loading="lazy"></div>
       <div class="callout c-policy"><small>En la ficha del cliente</small><b>Vida Familiar · #31207</b><br>Renueva 14 nov · Asesor: Andrés P.</div>
       <div class="callout c-otto"><span class="otto-av">O</span><div><small>Otto</small><b>Riesgo de cancelación.</b> Sofía mencionó el precio. Ofrécele ajustar la suma asegurada antes de cancelar.</div></div>
     </div>
